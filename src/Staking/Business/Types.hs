@@ -11,7 +11,7 @@ Module      : Staking.Business.Types
 Description : The main types used to build the logic of business operations.
 Copyright   : P2P Solutions Ltd.
 License     : GPL-3
-Maintainer  : laurynas@adafinance.io
+Maintainer  : calendfinance
 Stability   : develop
 -}
 

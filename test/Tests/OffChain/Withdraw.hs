@@ -12,7 +12,7 @@ Module      : Tests.OffChain.Withdraw
 Description : A test to check the behavior of the withdraw operation.
 Copyright   : P2P Solutions Ltd.
 License     : GPL-3
-Maintainer  : laurynas@adafinance.io
+Maintainer  : calendfinance
 Stability   : develop
 -}
 

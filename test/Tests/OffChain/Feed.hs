@@ -12,7 +12,7 @@ Module      : Tests.OffChain.Feed
 Description : A test to check the behavior of the feed operation.
 Copyright   : P2P Solutions Ltd.
 License     : GPL-3
-Maintainer  : laurynas@adafinance.io
+Maintainer  : calendfinance
 Stability   : develop
 -}
 
