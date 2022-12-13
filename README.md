@@ -12,9 +12,9 @@ It may be somewhat useful as an addition to the code base to highlight some of t
 
 ## 1. Write a Plutus Script
 
-All the script code can be found in the `swap` folder
+All the script code can be found in the `staking` folder
 
-[Script Code](https://github.com/twwu123/example-nft-marketplace/blob/764f29c4c9147b23abea20141cfe1636ebb516d0/swap/src/Swap.hs#L76)
+[Script Code](https://github.com/calend-fi/calendfi-contract/blob/main/src/Staking.hs)
 
 ```haskell
 data Offer = Offer 
@@ -106,7 +106,7 @@ The rest of the code shouldn't be too hard to follow with a basic understanding 
 
 ## 2. Compile the Plutus Script into bytecode
 
-[Compile code](https://github.com/twwu123/example-nft-marketplace/blob/764f29c4c9147b23abea20141cfe1636ebb516d0/swap/src/Swap.hs#L102)
+[Compile code](https://github.com/calend-fi/calendfi-contract/blob/main/src/Staking.hs)
 
 ```haskell
 validator :: Validator
@@ -177,7 +177,7 @@ But I would recommend a more traditional tech stack once our contract has been w
 The first thing we'll do is use `create-react-app`
 
 ```
-npx create-react-app example-nft-marketplace
+npx create-react-app calendfi
 ```
 
 Then we need to install `cardano-serialization-lib`
