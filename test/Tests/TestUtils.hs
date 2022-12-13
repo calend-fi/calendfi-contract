@@ -9,7 +9,7 @@ Module      : Tests.TestUtils
 Description : Common tests utils functions.
 Copyright   : P2P Solutions Ltd.
 License     : GPL-3
-Maintainer  : calendfinance
+Maintainer  : laurynas@adafinance.io
 Stability   : develop
 -}
 

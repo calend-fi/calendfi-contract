@@ -11,7 +11,7 @@ Module      : Tests.OffChain.Start
 Description : A test to check the behavior of the start operation.
 Copyright   : P2P Solutions Ltd.
 License     : GPL-3
-Maintainer  : calendfinance
+Maintainer  : laurynas@adafinance.io
 Stability   : develop
 -}
 

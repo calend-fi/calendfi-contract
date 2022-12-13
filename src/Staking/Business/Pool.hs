@@ -7,7 +7,7 @@ Description : Business logic related to registration of users in
               the staking pool.
 Copyright   : P2P Solutions Ltd.
 License     : GPL-3
-Maintainer  : calendfinance
+Maintainer  : laurynas@adafinance.io
 Stability   : develop
 -}
 

@@ -6,7 +6,7 @@ Module      : Staking.Business
 Description : Main module of Business logic.
 Copyright   : P2P Solutions Ltd.
 License     : GPL-3
-Maintainer  : calendfinance
+Maintainer  : laurynas@adafinance.io
 Stability   : develop
 -}
 

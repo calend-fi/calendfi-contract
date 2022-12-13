@@ -3,7 +3,7 @@ Module      : Staking
 Description : Main module of the Staking Pool contract.
 Copyright   : P2P Solutions Ltd.
 License     : GPL-3
-Maintainer  : calendfinance
+Maintainer  : laurynas@adafinance.io
 Stability   : develop
 -}
 

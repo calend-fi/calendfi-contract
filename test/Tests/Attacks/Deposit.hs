@@ -10,7 +10,7 @@ Module      : Tests.Attacks.Deposit
 Description : A new off-chain code to test an attack the deposit validator.
 Copyright   : P2P Solutions Ltd.
 License     : GPL-3
-Maintainer  : calendfinance
+Maintainer  : laurynas@adafinance.io
 Stability   : develop
 -}
 

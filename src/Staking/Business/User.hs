@@ -8,7 +8,7 @@ Description : Business logic related to the main operations that a user can
               perform.
 Copyright   : P2P Solutions Ltd.
 License     : GPL-3
-Maintainer  : calendfinance
+Maintainer  : laurynas@adafinance.io
 Stability   : develop
 -}
 

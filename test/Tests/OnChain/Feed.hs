@@ -12,7 +12,7 @@ Module      : Tests.OnChain.Feed
 Description : A test to simulate an attach on the on-chain code of feed.
 Copyright   : P2P Solutions Ltd.
 License     : GPL-3
-Maintainer  : calendfinance
+Maintainer  : laurynas@adafinance.io
 Stability   : develop
 -}
 

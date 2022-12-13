@@ -8,7 +8,7 @@ Module      : Tests.Attacks.AttackUtils
 Description : Helper functions to be used by the attacks.
 Copyright   : P2P Solutions Ltd.
 License     : GPL-3
-Maintainer  : calendfinance
+Maintainer  : laurynas@adafinance.io
 Stability   : develop
 -}
 

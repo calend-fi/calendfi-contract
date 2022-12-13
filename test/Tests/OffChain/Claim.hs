@@ -12,7 +12,7 @@ Module      : Tests.OffChain.Claim
 Description : A test to verify the behavior of the claim operation.
 Copyright   : P2P Solutions Ltd.
 License     : GPL-3
-Maintainer  : calendfinance
+Maintainer  : laurynas@adafinance.io
 Stability   : develop
 -}
 

@@ -5,7 +5,7 @@ Module      : Tests.BusinessTests
 Description : A list of tests verify the behavior of business logic operations.
 Copyright   : P2P Solutions Ltd.
 License     : GPL-3
-Maintainer  : calendfinance
+Maintainer  : laurynas@adafinance.io
 Stability   : develop
 -}
 

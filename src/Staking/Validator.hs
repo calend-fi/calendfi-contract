@@ -8,7 +8,7 @@ Module      : Staking.Validator
 Description : Boilerplate for compiling the plutus onchain code.
 Copyright   : P2P Solutions Ltd.
 License     : GPL-3
-Maintainer  : calendfinance
+Maintainer  : laurynas@adafinance.io
 Stability   : develop
 -}
 
