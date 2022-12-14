@@ -12,7 +12,7 @@ Module      : Tests.OnChain.Withdraw
 Description : A test to simulate an attach on the on-chain code of withdraw.
 Copyright   : P2P Solutions Ltd.
 License     : GPL-3
-Maintainer  : laurynas@adafinance.io
+Maintainer  : calendfinance
 Stability   : develop
 -}
 

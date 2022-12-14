@@ -3,7 +3,7 @@ Module      : Tests.Tests
 Description : A module to export all tests to the the main test file.
 Copyright   : P2P Solutions Ltd.
 License     : GPL-3
-Maintainer  : laurynas@adafinance.io
+Maintainer  : calendfinance
 Stability   : develop
 -}
 

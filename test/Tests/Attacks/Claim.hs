@@ -9,7 +9,7 @@ Module      : Tests.Attacks.Claim
 Description : A new off-chain code to test an attack the claim validator.
 Copyright   : P2P Solutions Ltd.
 License     : GPL-3
-Maintainer  : laurynas@adafinance.io
+Maintainer  : calendfinance
 Stability   : develop
 -}
 
