@@ -1,6 +1,6 @@
 /*Create an initial pool named pool.
-Call the stake function to mortgage 10 units of assets to the pool.
-Call the unstake function to withdraw 5 units of assets from the pool.
+Call the addStake function to mortgage 10 units of assets to the pool.
+Call the removeStake function to withdraw 5 units of assets from the pool.
 Returns the updated pool and final total stake.
 Finally, we specify the desired outcome, i.e. the returned pool should be a pool containing the staker address and 5 units of assets, for a total stake of 5 units.
 */
