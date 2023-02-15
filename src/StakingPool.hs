@@ -1,41 +1,86 @@
-/* This code defines a StakingPool data type, which is simply a mapping from Account (represented as a String) to Stake (represented as an Int). 
-The emptyPool function returns a new StakingPool with no stakes.
- The addStake and removeStake functions update the pool by adding or removing a specified stake from a given account, 
- respectively. The totalStake function calculates the total stake in the pool by summing up all the stakes in the mapping.*/
+-- Import the necessary libraries
+{-# LANGUAGE DeriveAnyClass #-}
+{-# LANGUAGE DeriveGeneric  #-}
+
+
+{-|
+Module      : StakingPool
+Description : Main module of staking pool logic V1
+Maintainer  : Contact@calend.io
+-}
+
 
 module StakingPool where
 
-import Data.Map (Map)
-import qualified Data.Map as Map
+import           Data.Aeson           (FromJSON, ToJSON)
+import           GHC.Generics         (Generic)
+import           Plutus.Contract      as Contract
+import qualified PlutusTx
+import           PlutusTx.Prelude     hiding (Semigroup(..), unless)
+import           Ledger               (Address, PubKeyHash, Validator, ValidatorHash)
+import           Ledger.Value         as Value
+import           Ledger.Contexts      as Validation
+import qualified Ledger.Typed.Scripts as Scripts
+import           Ledger.Ada           as Ada
+import           Playground.Contract  (ToSchema)
+import           Playground.Contract
 
-{-|
-    Module      : StakingPool
-    Description : Description of the StakingPool
-    Copyright   : P2P Solutions Ltd.
-    License     : GPL-3
-    Maintainer  : jack
-    Stability   : developer
- -}
 
-type Stake = Int
-type Account = String
+-- Name of Token
+tokenName :: TokenName
+tokenName = TokenName "MYTOKEN"
 
-data StakingPool = StakingPool { stakes :: Map Account Stake }
+-- Name of LP Token
+lpTokenName :: TokenName
+lpTokenName = TokenName "LPTOKEN"
 
-emptyPool :: StakingPool
-emptyPool = StakingPool Map.empty
+-- Type of Staking Token
+lpTokenType :: KnownCurrency
+lpTokenType = KnownCurrency (ValidatorHash "lpToken-validator-hash") lpTokenName
 
-addStake :: Account -> Stake -> StakingPool -> StakingPool
-addStake account stake pool =
-  let currentStake = Map.findWithDefault 0 account (stakes pool)
-      newStakes = Map.insert account (currentStake + stake) (stakes pool)
-  in pool { stakes = newStakes }
+-- Address of Staking Pool
+lpAddress :: Address
+lpAddress = undefined
 
-removeStake :: Account -> Stake -> StakingPool -> StakingPool
-removeStake account stake pool =
-  let currentStake = Map.findWithDefault 0 account (stakes pool)
-      newStakes = Map.insert account (currentStake - stake) (stakes pool)
-  in pool { stakes = newStakes }
+-- State of Staking Pool
+data LPStakingDatum = LPStakingDatum
+  { owner :: !PubKeyHash 
+  , amount :: !Integer   
+  } deriving (Show, Generic, FromJSON, ToJSON, ToSchema)
 
-totalStake :: StakingPool -> Stake
-totalStake = sum . Map.elems . stakes
+PlutusTx.unstableMakeIsData ''LPStakingDatum
+
+-- Implementaion of Validatator
+validateLPStaking :: LPStakingDatum -> () -> ValidatorCtx -> Bool
+validateLPStaking dat () ctx =
+  let info = scriptContextTxInfo ctx
+      -- varify the type of the input and output tokens
+      inputLPToken = assetClassValueOf (Validation.ownCurrencySymbol ctx) lpTokenName
+      outputLPToken = assetClassValueOf (Validation.ownCurrencySymbol ctx) lpTokenName
+      inVal = Validation.valueLockedBy info (Validation.ownHash ctx)
+      outVal = Validation.valueLockedBy info lpAddress
+      isValidLPToken = inputLPToken == outputLPToken
+      isValidValue = outVal `geq` inVal
+      -- verify owner
+      isSigned = txSignedBy info (owner dat)
+  in isValidLPToken && isValidValue && isSigned
+
+
+lpStakingValidator :: Validator
+lpStakingValidator = Scripts.validatorScript $$(PlutusTx.compile [|| validateLPStaking ||])
+
+-- Datatype if the assets
+data LPStaking
+instance Scripts.ScriptType LPStaking where
+    type instance DatumType LPStaking = LPStakingDatum
+    type instance RedeemerType LPStaking = ()
+
+lpStakingInstance :: Scripts.ScriptInstance LPStaking
+lpStakingInstance = Scripts.validator @LPStaking lpStakingValidator
+
+lpStakingAddress :: Address
+lpStakingAddress = Scripts.scriptAddress lpStakingInstance
+
+
+lpStaking :: Integer -> Contract () LPStakingError (Maybe TxId)
+lpStaking amount = do
