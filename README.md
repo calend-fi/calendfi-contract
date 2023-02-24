@@ -1,7 +1,7 @@
 # CalendFi  Staking Version 1.0
 
 
-##Staking in CalendFi
+## Staking in CalendFi
 For any participator ( such as Startup Team or Token holder ) who would like to propose a stake pool in CalendFi, we provide a one-stop DeFi solution for you. Read the information below. You will understand how the stake pool in CalendFi works and what you need to prepare. 
 
 ## How to create a stake pool in CalendFi?
