@@ -29,13 +29,13 @@ There are two situations in which the pool is going to be terminated.
 
 ## Ongoing development plan
 - [ ] In Version 1.0:
--- CalendFi Staking only support creating the staking pool of ADA token.
--- Anyone is allowed to create a staking pool.
+    - [ ]CalendFi Staking only support creating the staking pool of ADA token.
+    - [ ]Anyone is allowed to create a staking pool.
 
 - [ ] Version 1.1: 
--- CalendFi Staking will support the staking pool of various tokens.
--- The Creator will be able to top up their reward token.
+    - [ ]CalendFi Staking will support the staking pool of various tokens.
+    - [ ]The Creator will be able to top up their reward token.
 
 - [ ] Version 1.2:
--- The Creator can stake one Token and reward two reward tokens.
--- The Creator is able to set up a non-constant APRValue.
+    - [ ]The Creator can stake one Token and reward two reward tokens.
+    - [ ]The Creator is able to set up a non-constant APRValue.
